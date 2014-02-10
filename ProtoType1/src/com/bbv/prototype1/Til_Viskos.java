@@ -30,10 +30,12 @@ public class Til_Viskos extends LinearLayout {
 		_theta = (EditText) _linLay.findViewById(R.id.etTheta);
 		_RPM = (EditText) _linLay.findViewById(R.id.etRPM);
 		_tilVisk = (EditText) _linLay.findViewById(R.id.etViskosTil);
+		_clear = (Button)_linLay.findViewById(R.id.bClear);
 		
 		_theta.setOnFocusChangeListener(focChan);
 		_RPM.setOnFocusChangeListener(focChan);
-		_tilVisk.setOnFocusChangeListener(focChan);		
+		_tilVisk.setOnFocusChangeListener(focChan);	
+		_clear.setOnClickListener(cliLis);
 	}
 	
 	private void CreateListeners(){
