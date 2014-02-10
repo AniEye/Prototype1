@@ -15,9 +15,12 @@ public class Til_Viskos extends Basic_Calc {
 	OnFocusChangeListener focChan;
 	OnClickListener cliLis;
 
+	// indexes: 0=theta,1=RPM,2=tilvisk
+	EditText[] textFields = new EditText[3];
+
 	public Til_Viskos(Context context) {
-		super(context);
-		cont= context;
+		super(context, 3);
+		cont = context;
 		// TODO Auto-generated constructor stub
 		CreateListeners();
 		Initialize();
@@ -25,23 +28,34 @@ public class Til_Viskos extends Basic_Calc {
 
 	protected void Initialize() {
 		// TODO Auto-generated method stub
-		_linLay = (LinearLayout) LayoutInflater.from(cont).inflate(
-				R.layout.activity_viskositet__tilsynelatende, this);
-		_theta = (EditText) _linLay.findViewById(R.id.etTheta);
-		_RPM = (EditText) _linLay.findViewById(R.id.etRPM);
-		_tilVisk = (EditText) _linLay.findViewById(R.id.etViskosTil);
-		_clear = (Button)_linLay.findViewById(R.id.bClear);
-		
-		_theta.setOnFocusChangeListener(focChan);
-		_RPM.setOnFocusChangeListener(focChan);
-		_tilVisk.setOnFocusChangeListener(focChan);	
-		_clear.setOnClickListener(cliLis);
+		_linLay = setAndGetLinearLayout(R.layout.activity_viskositet__tilsynelatende);
+		// _linLay = (LinearLayout) LayoutInflater.from(cont).inflate(
+		// R.layout.activity_viskositet__tilsynelatende, this);
+
+		textFields[0] = FindAndReturnEditText(R.id.etTheta, focChan);
+		textFields[1] = FindAndReturnEditText(R.id.etRPM, focChan);
+		textFields[2] = FindAndReturnEditText(R.id.etViskosTil, focChan);
+
+		_theta = FindAndReturnEditText(R.id.etTheta, focChan);
+		_RPM = FindAndReturnEditText(R.id.etRPM, focChan);
+		_tilVisk = FindAndReturnEditText(R.id.etViskosTil, focChan);
+		_clear = FindAndReturnButton(R.id.bClear, cliLis);
+
+		// _theta = (EditText) _linLay.findViewById(R.id.etTheta);
+		// _RPM = (EditText) _linLay.findViewById(R.id.etRPM);
+		// _tilVisk = (EditText) _linLay.findViewById(R.id.etViskosTil);
+		// _clear = (Button)_linLay.findViewById(R.id.bClear);
+
+		// _theta.setOnFocusChangeListener(focChan);
+		// _RPM.setOnFocusChangeListener(focChan);
+		// _tilVisk.setOnFocusChangeListener(focChan);
+		// _clear.setOnClickListener(cliLis);
 	}
-	
-	protected void CreateListeners(){
-		
+
+	protected void CreateListeners() {
+
 		cliLis = new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				_theta.setText("");
@@ -53,7 +67,7 @@ public class Til_Viskos extends Basic_Calc {
 				_RPM.setEnabled(true);
 			}
 		};
-		
+
 		focChan = new OnFocusChangeListener() {
 
 			@Override
@@ -80,7 +94,7 @@ public class Til_Viskos extends Basic_Calc {
 		String _tilSynViskosString = _tilVisk.getText().toString();
 		String _RPMString = _RPM.getText().toString();
 
-		if (theSum() < 2) {
+		if (theSum(_textFieldsStatus) < 2) {
 			if (focusStatus == false && !_fieldsString.contentEquals("")) {
 				try {
 					if (Float.parseFloat(_fieldsString) != 0) {
@@ -96,11 +110,11 @@ public class Til_Viskos extends Basic_Calc {
 					try {
 						if (Float.parseFloat(_fieldsString) == 0) {
 							_textFieldsStatus[index] = 0;
-							Enabeling();
+							Enabeling(textFields);
 						}
 					} catch (NumberFormatException e) {
 						_textFieldsStatus[index] = 0;
-						Enabeling();
+						Enabeling(textFields);
 					}
 
 				} else if (focusStatus == false
@@ -128,6 +142,14 @@ public class Til_Viskos extends Basic_Calc {
 			_RPM.setEnabled(true);
 			_RPM.setText("");
 		}
+	}
+
+	@Override
+	protected String calculation(int type, float... fieldStatuses) {
+		float theAnswer=0;
+		
+		
+		return theAnswer+"";
 	}
 
 	protected String calculation(int type, float number1, float number2) {
@@ -162,8 +184,4 @@ public class Til_Viskos extends Basic_Calc {
 		}
 	}
 
-	protected int theSum() {
-		return _textFieldsStatus[0] + _textFieldsStatus[1]
-				+ _textFieldsStatus[2];
-	}
 }
