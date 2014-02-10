@@ -6,7 +6,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
-public class Til_Viskos extends LinearLayout {
+public class Til_Viskos extends Basic_Calc {
 	LinearLayout _linLay;
 	EditText _theta, _RPM, _tilVisk;
 	Button _clear;
@@ -23,7 +23,7 @@ public class Til_Viskos extends LinearLayout {
 		Initialize();
 	}
 
-	private void Initialize() {
+	protected void Initialize() {
 		// TODO Auto-generated method stub
 		_linLay = (LinearLayout) LayoutInflater.from(cont).inflate(
 				R.layout.activity_viskositet__tilsynelatende, this);
@@ -38,7 +38,7 @@ public class Til_Viskos extends LinearLayout {
 		_clear.setOnClickListener(cliLis);
 	}
 	
-	private void CreateListeners(){
+	protected void CreateListeners(){
 		
 		cliLis = new OnClickListener() {
 			
@@ -73,7 +73,7 @@ public class Til_Viskos extends LinearLayout {
 		};
 	}
 
-	private void FocusChange(EditText theCurrentField, int index,
+	protected void FocusChange(EditText theCurrentField, int index,
 			boolean focusStatus) {
 		String _fieldsString = theCurrentField.getText().toString();
 		String _thetaString = _theta.getText().toString();
@@ -117,7 +117,7 @@ public class Til_Viskos extends LinearLayout {
 		}
 	}
 
-	private void Enabeling() {
+	protected void Enabeling() {
 		if (!_theta.isEnabled()) {
 			_theta.setEnabled(true);
 			_theta.setText("");
@@ -130,7 +130,7 @@ public class Til_Viskos extends LinearLayout {
 		}
 	}
 
-	private String calculation(int type, float number1, float number2) {
+	protected String calculation(int type, float number1, float number2) {
 		float theAnswer = 0;
 
 		switch (type) {
@@ -144,7 +144,7 @@ public class Til_Viskos extends LinearLayout {
 		return theAnswer + "";
 	}
 
-	private void updateRelevantResult(String _thetaString, String _RPMString,
+	protected void updateRelevantResult(String _thetaString, String _RPMString,
 			String _tilSynViskosString) {
 		if (_textFieldsStatus[0] == 0) {
 			_tilVisk.setText(calculation(0, Float.parseFloat(_thetaString),
@@ -162,7 +162,7 @@ public class Til_Viskos extends LinearLayout {
 		}
 	}
 
-	private int theSum() {
+	protected int theSum() {
 		return _textFieldsStatus[0] + _textFieldsStatus[1]
 				+ _textFieldsStatus[2];
 	}
