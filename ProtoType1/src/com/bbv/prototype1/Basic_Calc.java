@@ -64,7 +64,15 @@ public abstract class Basic_Calc extends LinearLayout {
 	protected void updateRelevantResult(int[] fieldStatuses, EditText... editTexts ){
 		
 	}
-	protected abstract String calculation(int type,float... fieldStatuses );
+	protected float[] getFloatVariables(EditText... fieldStatuses ){
+		float[] returnFloatList = new float[fieldStatuses.length];
+		for(int i=0;i<fieldStatuses.length;i++){
+			returnFloatList[i] = Float.parseFloat(fieldStatuses[i].getText().toString());
+		}
+		return returnFloatList;
+	}
+	
+	protected abstract String calculation(int editTextIndex,float... fieldStatuses );
 	
 	// protected abstract void updateRelevantResult(String _thetaString,
 	// String _RPMString, String _tilSynViskosString);

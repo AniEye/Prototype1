@@ -15,7 +15,7 @@ public class Til_Viskos extends Basic_Calc {
 	OnFocusChangeListener focChan;
 	OnClickListener cliLis;
 
-	// indexes: 0=theta,1=RPM,2=tilvisk
+	// indexes: 0=theta, 1=RPM, 2=tilvisk
 	EditText[] textFields = new EditText[3];
 
 	public Til_Viskos(Context context) {
@@ -131,27 +131,37 @@ public class Til_Viskos extends Basic_Calc {
 		}
 	}
 
-	protected void Enabeling() {
-		if (!_theta.isEnabled()) {
-			_theta.setEnabled(true);
-			_theta.setText("");
-		} else if (!_tilVisk.isEnabled()) {
-			_tilVisk.setEnabled(true);
-			_tilVisk.setText("");
-		} else if (!_RPM.isEnabled()) {
-			_RPM.setEnabled(true);
-			_RPM.setText("");
-		}
-	}
+	// protected void Enabeling() {
+	// if (!_theta.isEnabled()) {
+	// _theta.setEnabled(true);
+	// _theta.setText("");
+	// } else if (!_tilVisk.isEnabled()) {
+	// _tilVisk.setEnabled(true);
+	// _tilVisk.setText("");
+	// } else if (!_RPM.isEnabled()) {
+	// _RPM.setEnabled(true);
+	// _RPM.setText("");
+	// }
+	// }
 
 	@Override
-	protected String calculation(int type, float... fieldStatuses) {
-		float theAnswer=0;
-		
-		
-		return theAnswer+"";
+	protected String calculation(int editTextIndex, float... fieldStatuses) {
+		float theAnswer = 0;
+		switch (editTextIndex) {		
+		case 0://theta
+			theAnswer = (float) ((fieldStatuses[2] * fieldStatuses[1]) / 300);
+			break;
+		case 1://rpm
+			theAnswer = (float) ((300.0 * fieldStatuses[0]) / fieldStatuses[2]);
+			break;
+		case 2://tilvisk
+			theAnswer = (float) ((300.0 * fieldStatuses[0]) / fieldStatuses[1]);
+			break;
+		}
+		return theAnswer + "";
 	}
-
+	
+	// indexes: 0=theta, 1=RPM, 2=tilvisk
 	protected String calculation(int type, float number1, float number2) {
 		float theAnswer = 0;
 
@@ -168,9 +178,11 @@ public class Til_Viskos extends Basic_Calc {
 
 	protected void updateRelevantResult(String _thetaString, String _RPMString,
 			String _tilSynViskosString) {
+
 		if (_textFieldsStatus[0] == 0) {
 			_tilVisk.setText(calculation(0, Float.parseFloat(_thetaString),
 					Float.parseFloat(_RPMString)));
+
 			_tilVisk.setEnabled(false);
 		} else if (_textFieldsStatus[1] == 0) {
 			_theta.setText(calculation(1,
