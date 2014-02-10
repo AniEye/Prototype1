@@ -1,6 +1,7 @@
 package com.bbv.prototype1;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,8 +15,7 @@ public class Kalkulator extends Activity implements OnItemSelectedListener {
 
 	Spinner valg;
 	LinearLayout lLayout;
-	String[] kalks = { "activity_viskositet__tilsynelatende" };
-	View visView;
+	String[] kalks = { "Til_Viskos"};
 
 	// test
 	Til_Viskos visk;
@@ -47,17 +47,16 @@ public class Kalkulator extends Activity implements OnItemSelectedListener {
 		case 1:
 			if (lLayout.getChildCount() > 0)
 				lLayout.removeAllViews();
-			Log.println(Log.DEBUG, "Kalk", "will create til_Viskos now");
 			visk = new Til_Viskos(lLayout.getContext());
 			lLayout.addView(visk);
-			Log.println(Log.DEBUG, "Kalk", "finished creating til_Viskos");
+			
 			break;
 		case 2:
 			if (lLayout.getChildCount() > 0)
 				lLayout.removeAllViews();
 			break;
 		}
-
+		
 	}
 
 	@Override
