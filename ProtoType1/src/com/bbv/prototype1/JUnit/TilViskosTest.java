@@ -17,7 +17,7 @@ public class TilViskosTest extends AndroidTestCase {
 	public void testCalculationIntFloatFloat() {
 		
 		
-		//Uferdig kode for testing
+		//Uferdig kode for testing.
 		
 //		//Testing TV
 //		assertEquals("300.0", test.calculation(0, 56, 56));
