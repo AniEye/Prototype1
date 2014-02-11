@@ -1,6 +1,7 @@
 package com.bbv.prototype1;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.*;
 import android.widget.Button;
 import android.widget.EditText;
@@ -38,7 +39,7 @@ public class Til_Viskos extends Basic_Calc {
 			@Override
 			public void onClick(View v) {
 				ResetFields(textFields);
-				_textFieldsStatus = new int[] { 0, 0, 0 };				
+				_textFieldsStatus = new int[] { 0, 0, 0 };
 			}
 		};
 
@@ -68,7 +69,7 @@ public class Til_Viskos extends Basic_Calc {
 		if (theSum(_textFieldsStatus) < 2) {
 			if (focusStatus == false && !_fieldsString.contentEquals("")) {
 				try {
-					if (Float.parseFloat(_fieldsString) != 0) {
+					if (Float.parseFloat(_fieldsString) != 0.0) {
 						_textFieldsStatus[indexOfCurrentField] = 1;
 					}
 				} catch (NumberFormatException e) {
@@ -77,21 +78,25 @@ public class Til_Viskos extends Basic_Calc {
 			}
 		} else {
 			if (_textFieldsStatus[indexOfCurrentField] == 1) {
-				if (focusStatus == false && _fieldsString.contentEquals("")) {
+				if (focusStatus == false) {
+					float number = 0;
 					try {
-						if (Float.parseFloat(_fieldsString) == 0) {
-							_textFieldsStatus[indexOfCurrentField] = 0;
-							Enabeling(textFields);
-						}
+						number = Float.parseFloat(_fieldsString);
 					} catch (NumberFormatException e) {
+						e.printStackTrace();						
+					}
+					
+					if (_fieldsString.contentEquals("")) {
 						_textFieldsStatus[indexOfCurrentField] = 0;
 						Enabeling(textFields);
+					} else if (number == 0.0) {
+						_textFieldsStatus[indexOfCurrentField] = 0;
+						textFields[indexOfCurrentField].setText("");
+						Enabeling(textFields);
+					} else if (!_fieldsString.contentEquals("")) {
+						updateRelevantResult();
 					}
-				} else if (focusStatus == false
-						&& !_fieldsString.contentEquals("")) {
-					updateRelevantResult();
 				}
-
 			} else {
 				updateRelevantResult();
 				textFields[indexOfCurrentField].setEnabled(false);
@@ -102,6 +107,7 @@ public class Til_Viskos extends Basic_Calc {
 	protected void updateRelevantResult() {
 		for (int i = 0; i < _textFieldsStatus.length; i++) {
 			if (_textFieldsStatus[i] == 0) {
+
 				textFields[i].setText(calculation(i,
 						getFloatVariables(textFields)));
 				textFields[i].setEnabled(false);
@@ -123,6 +129,9 @@ public class Til_Viskos extends Basic_Calc {
 			theAnswer = (float) ((300.0 * fieldStatuses[0]) / fieldStatuses[1]);
 			break;
 		}
-		return theAnswer + "";
+		if (theAnswer != 0)
+			return theAnswer + "";
+		else
+			return "";
 	}
 }
