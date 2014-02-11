@@ -138,18 +138,18 @@ public class Til_Viskos extends Basic_Calc {
 		}
 	}
 
-	public String calculation(int arg0, float... fieldStatuses) {
+	public String calculation(int variableToCalculate, float... fieldStatuses) {
 		/**
 		 * This method calculates the expression according to which 
 		 * field is left blank.
-		 * @param editTextIndex The index of the variable to be calculated
+		 * @param variableToCalculate The index of the variable to be calculated
 		 * { @value #THETA_INDEX } 
 		 * { @value #RPM_INDEX } 
 		 * { @value #TIL_VISK_INDEX } 
 		 */
 		
 		float theAnswer = 0;
-		switch (arg0) {
+		switch (variableToCalculate) {
 		case THETA_INDEX:// theta
 			theAnswer = (float) ((fieldStatuses[2] * fieldStatuses[1]) / 300);
 			break;
