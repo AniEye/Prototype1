@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class MainMenu extends Activity implements OnClickListener {
 
-	String[] menuList = { "Pros_og_Teori", "Kalkulator", "Ovinger" };
+	String[] menuList = { "Pros_og_Teori", "Kalkulator", "Ovinger","Vis_Teori" };
 	Button teori, kalk, ovinger;
 
 	@Override
@@ -39,6 +39,9 @@ public class MainMenu extends Activity implements OnClickListener {
 			break;
 		case R.id.bOvinger:
 			selected = menuList[2];
+			break;
+		case R.id.bVis_Teori:
+			selected = menuList[3];
 			break;
 		}
 		try {

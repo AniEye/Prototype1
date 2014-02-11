@@ -35,5 +35,13 @@
         android:background="@drawable/costum_button1"
         android:gravity="center"
         android:text="Øvinger" />
+    <Button
+        android:id="@+id/bVis_Teori"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/costum_button1"
+        android:gravity="center"
+        android:text="Vis Teori" />
 
 </LinearLayout>
