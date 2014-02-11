@@ -10,5 +10,7 @@ public class Vis_Teori extends Activity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.vis_teori);
+		
+		
 	}
 }
