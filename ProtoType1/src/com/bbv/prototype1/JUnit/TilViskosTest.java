@@ -1,5 +1,7 @@
 package com.bbv.prototype1.JUnit;
 
+import java.util.ArrayList;
+
 import com.bbv.prototype1.Kalkulatorer.Til_Viskos;
 
 import android.test.AndroidTestCase;
@@ -19,6 +21,8 @@ public class TilViskosTest extends AndroidTestCase {
 		super.setUp();
 		
 		test = new Til_Viskos(getContext());
+		
+		ArrayList<String> test;
 	}
 
 	public void testCalculationIntFloatFloat() {
