@@ -22,7 +22,6 @@ public class TilViskosTest extends AndroidTestCase {
 		
 		test = new Til_Viskos(getContext());
 		
-		ArrayList<String> test;
 	}
 
 	public void testCalculationIntFloatFloat() {
