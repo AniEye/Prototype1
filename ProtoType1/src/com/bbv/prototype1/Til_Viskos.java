@@ -9,7 +9,7 @@ import android.widget.LinearLayout;
 
 public class Til_Viskos extends Basic_Calc {
 	LinearLayout _linLay;
-	Button _clear,_update;
+	Button _clear, _update;
 	int[] _textFieldsStatus = { 0, 0, 0 };
 	OnFocusChangeListener focChan;
 	OnClickListener cliLis;
@@ -45,7 +45,16 @@ public class Til_Viskos extends Basic_Calc {
 					_textFieldsStatus = new int[] { 0, 0, 0 };
 					break;
 				case R.id.bViskosUpdate:
-					updateRelevantResult();
+					for (int i = 0; i < textFields.length; i++) {
+						FocusChange(i, false);
+						try {
+							if (Float.parseFloat(textFields[i].getText()
+									.toString()) == 0.0)
+								textFields[i].setText("");
+						} catch (NumberFormatException e) {
+							e.printStackTrace();
+						}
+					}
 					break;
 				}
 			}
