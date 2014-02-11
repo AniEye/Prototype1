@@ -19,8 +19,8 @@ public class TilViskosTest extends AndroidTestCase {
 		
 		//Uferdig kode for testing. 
 		
-//		//Testing TV
-//		assertEquals("300.0", test.calculation(0, 56, 56));
+		//Testing TV
+//		assertEquals("300.0", test.calculation(arg0, fieldStatuses)
 //		assertEquals("150.0", test.calculation(0, 5, 10));
 //		
 //		//Testing Theta
