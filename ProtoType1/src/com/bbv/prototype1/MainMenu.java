@@ -10,7 +10,7 @@ import android.widget.Button;
 public class MainMenu extends Activity implements OnClickListener {
 
 	String[] menuList = { "Pros_og_Teori", "Kalkulator", "Ovinger","Vis_Teori" };
-	int[] buttonIDs = {R.id.bTeori,R.id.bKalk,R.id.bOvinger};
+	int[] buttonIDs = {R.id.bTeori,R.id.bKalk,R.id.bOvinger,R.id.bVis_Teori};
 	
 	Button[] buttonList;
 
