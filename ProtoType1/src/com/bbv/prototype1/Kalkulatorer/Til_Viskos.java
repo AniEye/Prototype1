@@ -20,6 +20,7 @@ public class Til_Viskos extends Basic_Calc {
 	OnClickListener cliLis;
 
 	// indexes: 0=theta, 1=RPM, 2=tilvisk
+	public final static int THETA_INDEX=0, RPM_INDEX=1, TIL_VISK_INDEX=2;
 	EditText[] textFields = new EditText[3];
 
 	public Til_Viskos(Context context) {
@@ -30,7 +31,6 @@ public class Til_Viskos extends Basic_Calc {
 
 	protected void Initialize() {
 		_linLay = setAndGetLinearLayout(R.layout.activity_viskositet__tilsynelatende);
-
 		textFields[0] = FindAndReturnEditText(R.id.etTheta, focChan);
 		textFields[1] = FindAndReturnEditText(R.id.etRPM, focChan);
 		textFields[2] = FindAndReturnEditText(R.id.etViskosTil, focChan);
@@ -138,16 +138,25 @@ public class Til_Viskos extends Basic_Calc {
 		}
 	}
 
-	protected String calculation(int editTextIndex, float... fieldStatuses) {
+	public String calculation(int arg0, float... fieldStatuses) {
+		/**
+		 * This method calculates the expression according to which 
+		 * field is left blank.
+		 * @param editTextIndex The index of the variable to be calculated
+		 * { @value #THETA_INDEX } 
+		 * { @value #RPM_INDEX } 
+		 * { @value #TIL_VISK_INDEX } 
+		 */
+		
 		float theAnswer = 0;
-		switch (editTextIndex) {
-		case 0:// theta
+		switch (arg0) {
+		case THETA_INDEX:// theta
 			theAnswer = (float) ((fieldStatuses[2] * fieldStatuses[1]) / 300);
 			break;
-		case 1:// rpm
+		case RPM_INDEX:// rpm
 			theAnswer = (float) ((300.0 * fieldStatuses[0]) / fieldStatuses[2]);
 			break;
-		case 2:// tilvisk
+		case TIL_VISK_INDEX:// tilvisk
 			theAnswer = (float) ((300.0 * fieldStatuses[0]) / fieldStatuses[1]);
 			break;
 		}
