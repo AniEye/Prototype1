@@ -21,6 +21,7 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
+        public static final int aero_blue=0x7f040002;
         public static final int black=0x7f040000;
         public static final int light_blue=0x7f040001;
     }
@@ -44,7 +45,7 @@ public final class R {
         public static final int til_viskos_icon=0x7f020004;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a001c;
+        public static final int action_settings=0x7f0a0019;
         public static final int bKalk=0x7f0a0016;
         public static final int bOvinger=0x7f0a0017;
         public static final int bTeori=0x7f0a0015;
@@ -54,11 +55,9 @@ public final class R {
         public static final int bViskosUpdate=0x7f0a0010;
         public static final int button1=0x7f0a0012;
         public static final int button2=0x7f0a0013;
-        public static final int content=0x7f0a001a;
         public static final int etRPM=0x7f0a000f;
         public static final int etTheta=0x7f0a000d;
         public static final int etViskosTil=0x7f0a000b;
-        public static final int handle=0x7f0a001b;
         public static final int imageView1=0x7f0a0009;
         public static final int lInSVKalk=0x7f0a0002;
         public static final int sDDKapittel=0x7f0a0007;
@@ -67,7 +66,6 @@ public final class R {
         public static final int sKapittel=0x7f0a0005;
         public static final int sOvinger=0x7f0a0003;
         public static final int scrollView1=0x7f0a0018;
-        public static final int slidingDrawer1=0x7f0a0019;
         public static final int svKalk=0x7f0a0001;
         public static final int textView1=0x7f0a0014;
         public static final int textView2=0x7f0a000c;
