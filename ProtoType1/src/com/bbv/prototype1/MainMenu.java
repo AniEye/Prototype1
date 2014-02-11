@@ -10,7 +10,7 @@ import android.widget.Button;
 public class MainMenu extends Activity implements OnClickListener {
 
 	String[] menuList = { "Pros_og_Teori", "Kalkulator" };
-	Button calc, viskos, teori, kalk;
+	Button teori, kalk, ovinger;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -20,8 +20,11 @@ public class MainMenu extends Activity implements OnClickListener {
 
 		teori = (Button) findViewById(R.id.bTeori);
 		kalk = (Button) findViewById(R.id.bKalk);
+		ovinger = (Button)findViewById(R.id.bOvinger);
+		
 		teori.setOnClickListener(this);
 		kalk.setOnClickListener(this);
+		ovinger.setOnClickListener(this);
 	}
 
 	@Override
