@@ -72,7 +72,7 @@ public abstract class Basic_Calc extends LinearLayout {
 		return returnFloatList;
 	}
 
-	protected abstract String calculation(int editTextIndex,
+	public abstract String calculation(int editTextIndex,
 			float... fieldStatuses);
 
 	protected int theSum(int... fieldStatuses) {
