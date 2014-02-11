@@ -69,5 +69,12 @@
     </string-array>
 
     <string name="title_activity_viskositet__tilsynelatende">Viskositet_Tilsynelatende</string>
+    <string-array name="test_array">
+        <item>Shit</item>
+        <item>This</item>
+        <item>Ended</item>
+        <item>Up</item>
+        <item>Working</item>
+    </string-array>
 
 </resources>

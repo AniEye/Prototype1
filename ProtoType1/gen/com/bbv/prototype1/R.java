@@ -17,6 +17,7 @@ public final class R {
         public static final int del_kapittel4=0x7f070005;
         public static final int kapittler=0x7f070001;
         public static final int ovinger=0x7f070000;
+        public static final int test_array=0x7f070008;
     }
     public static final class attr {
     }
