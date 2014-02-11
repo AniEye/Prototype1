@@ -58,13 +58,13 @@ public final class R {
         public static final int bViskosUpdate=0x7f0a0010;
         public static final int button1=0x7f0a0012;
         public static final int button2=0x7f0a0013;
-        public static final int drawer_layout=0x7f0a0019;
+        public static final int drawer=0x7f0a001b;
         public static final int etRPM=0x7f0a000f;
         public static final int etTheta=0x7f0a000d;
         public static final int etViskosTil=0x7f0a000b;
         public static final int imageView1=0x7f0a0009;
         public static final int lInSVKalk=0x7f0a0002;
-        public static final int left_drawer=0x7f0a001b;
+        public static final int layout_draw=0x7f0a0019;
         public static final int sDDKapittel=0x7f0a0007;
         public static final int sDelKapittel=0x7f0a0006;
         public static final int sKalk=0x7f0a0000;
