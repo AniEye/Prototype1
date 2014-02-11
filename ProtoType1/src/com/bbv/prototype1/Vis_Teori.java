@@ -19,6 +19,6 @@ public class Vis_Teori extends Activity {
 		setContentView(R.layout.vis_teori);
 		
 		_drawerLayout = (DrawerLayout)findViewById(R.id.drawer);
-		_listView = (ListView)findViewById(R.id.L)
+		
 	}
 }
