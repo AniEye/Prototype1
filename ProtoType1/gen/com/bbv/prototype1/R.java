@@ -9,13 +9,14 @@ package com.bbv.prototype1;
 
 public final class R {
     public static final class array {
-        public static final int calculator=0x7f070006;
-        public static final int del4kapittel1=0x7f070005;
-        public static final int del_kapittel1=0x7f070001;
-        public static final int del_kapittel2=0x7f070002;
-        public static final int del_kapittel3=0x7f070003;
-        public static final int del_kapittel4=0x7f070004;
-        public static final int kapittler=0x7f070000;
+        public static final int calculator=0x7f070007;
+        public static final int del4kapittel1=0x7f070006;
+        public static final int del_kapittel1=0x7f070002;
+        public static final int del_kapittel2=0x7f070003;
+        public static final int del_kapittel3=0x7f070004;
+        public static final int del_kapittel4=0x7f070005;
+        public static final int kapittler=0x7f070001;
+        public static final int ovinger=0x7f070000;
     }
     public static final class attr {
     }
@@ -43,47 +44,51 @@ public final class R {
         public static final int til_viskos_icon=0x7f020004;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a001a;
-        public static final int bKalk=0x7f0a0014;
-        public static final int bOvinger=0x7f0a0015;
-        public static final int bTeori=0x7f0a0013;
-        public static final int bVidere_ProsTeori=0x7f0a0006;
-        public static final int bViskosClear=0x7f0a000f;
-        public static final int bViskosUpdate=0x7f0a000e;
-        public static final int button1=0x7f0a0010;
-        public static final int button2=0x7f0a0011;
-        public static final int content=0x7f0a0018;
-        public static final int etRPM=0x7f0a000d;
-        public static final int etTheta=0x7f0a000b;
-        public static final int etViskosTil=0x7f0a0009;
-        public static final int handle=0x7f0a0019;
-        public static final int imageView1=0x7f0a0007;
+        public static final int action_settings=0x7f0a001c;
+        public static final int bKalk=0x7f0a0016;
+        public static final int bOvinger=0x7f0a0017;
+        public static final int bTeori=0x7f0a0015;
+        public static final int bVidere_Oving=0x7f0a0004;
+        public static final int bVidere_ProsTeori=0x7f0a0008;
+        public static final int bViskosClear=0x7f0a0011;
+        public static final int bViskosUpdate=0x7f0a0010;
+        public static final int button1=0x7f0a0012;
+        public static final int button2=0x7f0a0013;
+        public static final int content=0x7f0a001a;
+        public static final int etRPM=0x7f0a000f;
+        public static final int etTheta=0x7f0a000d;
+        public static final int etViskosTil=0x7f0a000b;
+        public static final int handle=0x7f0a001b;
+        public static final int imageView1=0x7f0a0009;
         public static final int lInSVKalk=0x7f0a0002;
-        public static final int sDDKapittel=0x7f0a0005;
-        public static final int sDelKapittel=0x7f0a0004;
+        public static final int sDDKapittel=0x7f0a0007;
+        public static final int sDelKapittel=0x7f0a0006;
         public static final int sKalk=0x7f0a0000;
-        public static final int sKapittel=0x7f0a0003;
-        public static final int scrollView1=0x7f0a0016;
-        public static final int slidingDrawer1=0x7f0a0017;
+        public static final int sKapittel=0x7f0a0005;
+        public static final int sOvinger=0x7f0a0003;
+        public static final int scrollView1=0x7f0a0018;
+        public static final int slidingDrawer1=0x7f0a0019;
         public static final int svKalk=0x7f0a0001;
-        public static final int textView1=0x7f0a0012;
-        public static final int textView2=0x7f0a000a;
-        public static final int textView3=0x7f0a000c;
-        public static final int tvViskosTil=0x7f0a0008;
+        public static final int textView1=0x7f0a0014;
+        public static final int textView2=0x7f0a000c;
+        public static final int textView3=0x7f0a000e;
+        public static final int tvViskosTil=0x7f0a000a;
     }
     public static final class layout {
         public static final int activity_calculator=0x7f030000;
-        public static final int activity_pros_og__teori=0x7f030001;
-        public static final int activity_viskositet__tilsynelatende=0x7f030002;
-        public static final int main=0x7f030003;
-        public static final int mainmenu=0x7f030004;
-        public static final int vis_teori=0x7f030005;
+        public static final int activity_ovinger=0x7f030001;
+        public static final int activity_pros_og__teori=0x7f030002;
+        public static final int activity_viskositet__tilsynelatende=0x7f030003;
+        public static final int main=0x7f030004;
+        public static final int mainmenu=0x7f030005;
+        public static final int vis_teori=0x7f030006;
     }
     public static final class menu {
         public static final int calculator=0x7f090000;
         public static final int main=0x7f090001;
-        public static final int pros_og__teori=0x7f090002;
-        public static final int viskositet__tilsynelatende=0x7f090003;
+        public static final int ovinger=0x7f090002;
+        public static final int pros_og__teori=0x7f090003;
+        public static final int viskositet__tilsynelatende=0x7f090004;
     }
     public static final class string {
         public static final int action_settings=0x7f060001;
@@ -91,10 +96,12 @@ public final class R {
         public static final int delkapitelPrompt=0x7f060006;
         public static final int hello_world=0x7f060002;
         public static final int kapittelPrompt=0x7f060005;
+        public static final int ovingPromt=0x7f060008;
         public static final int prosedyrer_og_teori=0x7f060003;
         public static final int title_activity_calculator=0x7f060007;
         public static final int title_activity_pros_og__teori=0x7f060004;
-        public static final int title_activity_viskositet__tilsynelatende=0x7f060008;
+        public static final int title_activity_viskositet__tilsynelatende=0x7f06000a;
+        public static final int title_tests=0x7f060009;
     }
     public static final class style {
         /** 

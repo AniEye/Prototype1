@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bbv.prototype1"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="1.0" android:installLocation="auto">
 
     <uses-sdk
         android:minSdkVersion="8"
@@ -34,6 +34,15 @@
             android:label="@string/prosedyrer_og_teori" >
             <intent-filter>
                 <action android:name="com.bbv.prototype1.PROS_OG_TEORI" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.bbv.prototype1.Ovinger"
+            android:label="@string/title_tests" >
+            <intent-filter>
+                <action android:name="com.bbv.prototype1.Ovinger" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

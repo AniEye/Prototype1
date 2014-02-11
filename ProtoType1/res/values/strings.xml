@@ -9,7 +9,17 @@
     <string name="kapittelPrompt">Velg kapittel</string>
     <string name="delkapitelPrompt">Velg delkapittel</string>
     <string name="title_activity_calculator">Kalkulator</string>
+    <string name="ovingPromt">Velg Øving</string>
+    <string name="title_tests">Øvinger</string>
 
+    <string-array name="ovinger">
+        <item>Velg Øving</item>
+        <item>Øving 1: Leire og vektmaterialer</item>
+        <item>Øving 2: Reologi og filtertap</item>
+        <item>Øving 3: Testing av vannbasert boreslam</item>
+        <item>Øving 4: Modifikasjon av boreslam</item>
+        <item>Øving 5: Boreslam</item>
+    </string-array>
     <string-array name="kapittler">
         <item>Velg kapittel</item>
         <item>1. Leire og vektmaterialer</item>
