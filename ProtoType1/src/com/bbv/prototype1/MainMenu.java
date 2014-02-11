@@ -13,7 +13,6 @@ public class MainMenu extends Activity implements OnClickListener {
 	int[] buttonIDs = {R.id.bTeori,R.id.bKalk,R.id.bOvinger};
 	
 	Button[] buttonList;
-	Button teori, kalk, ovinger;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -27,32 +26,11 @@ public class MainMenu extends Activity implements OnClickListener {
 			buttonList[i] = (Button) findViewById(buttonIDs[i]);
 			buttonList[i].setOnClickListener(this);
 		}
-//		teori = (Button) findViewById(R.id.bTeori);
-//		kalk = (Button) findViewById(R.id.bKalk);
-//		ovinger = (Button) findViewById(R.id.bOvinger);
-//
-//		teori.setOnClickListener(this);
-//		kalk.setOnClickListener(this);
-//		ovinger.setOnClickListener(this);
 	}
 
 	@Override
 	public void onClick(View v) {
 		String selected = "";
-//		switch (v.getId()) {
-//		case R.id.bTeori:
-//			selected = menuList[0];
-//			break;
-//		case R.id.bKalk:
-//			selected = menuList[1];
-//			break;
-//		case R.id.bOvinger:
-//			selected = menuList[2];
-//			break;
-//		case R.id.bVis_Teori:
-//			selected = menuList[3];
-//			break;
-//		}
 		for(int i = 0;i<buttonIDs.length;i++){
 			if(v.getId()==buttonIDs[i]){
 				selected = menuList[i];
