@@ -11,7 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
-public class Ovinger extends Activity implements OnItemSelectedListener{
+public class Ovinger extends Activity implements OnItemSelectedListener,OnClickListener{
 
 	Spinner oving;
 	Button gVidere;
@@ -35,18 +35,9 @@ public class Ovinger extends Activity implements OnItemSelectedListener{
 
 	private void initialize() {
 		oving = (Spinner) findViewById(R.id.sOvinger);
-		gVidere = (Button) findViewById(R.id.bOvinger);
+		gVidere = (Button) findViewById(R.id.bVidere_Oving);
 		
-		gVidere.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				
-				
-				
-			}
-		});
-
+		gVidere.setOnClickListener(this);
 		oving.setOnItemSelectedListener(this);
 	}
 
@@ -88,6 +79,12 @@ public class Ovinger extends Activity implements OnItemSelectedListener{
 	public void onNothingSelected(AdapterView<?> arg0) {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
