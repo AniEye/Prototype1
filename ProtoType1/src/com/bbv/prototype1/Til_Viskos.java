@@ -9,7 +9,7 @@ import android.widget.LinearLayout;
 
 public class Til_Viskos extends Basic_Calc {
 	LinearLayout _linLay;
-	Button _clear;
+	Button _clear,_update;
 	int[] _textFieldsStatus = { 0, 0, 0 };
 	OnFocusChangeListener focChan;
 	OnClickListener cliLis;
@@ -29,7 +29,8 @@ public class Til_Viskos extends Basic_Calc {
 		textFields[0] = FindAndReturnEditText(R.id.etTheta, focChan);
 		textFields[1] = FindAndReturnEditText(R.id.etRPM, focChan);
 		textFields[2] = FindAndReturnEditText(R.id.etViskosTil, focChan);
-		_clear = FindAndReturnButton(R.id.bClear, cliLis);
+		_clear = FindAndReturnButton(R.id.bViskosClear, cliLis);
+		_update = FindAndReturnButton(R.id.bViskosUpdate, cliLis);
 	}
 
 	protected void CreateListeners() {
@@ -38,8 +39,15 @@ public class Til_Viskos extends Basic_Calc {
 
 			@Override
 			public void onClick(View v) {
-				ResetFields(textFields);
-				_textFieldsStatus = new int[] { 0, 0, 0 };
+				switch (v.getId()) {
+				case R.id.bViskosClear:
+					ResetFields(textFields);
+					_textFieldsStatus = new int[] { 0, 0, 0 };
+					break;
+				case R.id.bViskosUpdate:
+					updateRelevantResult();
+					break;
+				}
 			}
 		};
 
@@ -83,9 +91,9 @@ public class Til_Viskos extends Basic_Calc {
 					try {
 						number = Float.parseFloat(_fieldsString);
 					} catch (NumberFormatException e) {
-						e.printStackTrace();						
+						e.printStackTrace();
 					}
-					
+
 					if (_fieldsString.contentEquals("")) {
 						_textFieldsStatus[indexOfCurrentField] = 0;
 						Enabeling(textFields);

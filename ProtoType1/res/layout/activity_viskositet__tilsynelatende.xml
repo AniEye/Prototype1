@@ -67,13 +67,13 @@
         android:orientation="horizontal" >
 
         <Button
-            
+             android:id="@+id/bViskosUpdate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Update" />
 
         <Button
-            android:id="@+id/bClear"
+            android:id="@+id/bViskosClear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Clear" />
