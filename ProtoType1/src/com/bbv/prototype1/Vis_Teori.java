@@ -39,7 +39,7 @@ public class Vis_Teori extends Activity {
 		_listView.setOnItemClickListener(new DrawerItemClickListener());
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		getActionBar().setHomeButtonEnabled(true);
-
+//helo
 		_actionDrawerToggle = new ActionBarDrawerToggle(this, _drawerLayout,
 				R.drawable.ic_drawer, R.string.drawer_open,
 				R.string.drawer_close) {
