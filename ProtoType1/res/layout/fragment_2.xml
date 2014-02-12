@@ -30,6 +30,7 @@
         android:id="@+id/textView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
         android:gravity="center_horizontal"
         android:text="This is page 2"
         android:textAppearance="?android:attr/textAppearanceMedium" />
@@ -46,6 +47,8 @@
 
             <Button
                 android:id="@+id/button1"
+                android:background="@drawable/custom_button2"
+                android:textColor="@android:color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="and a button for fun" />

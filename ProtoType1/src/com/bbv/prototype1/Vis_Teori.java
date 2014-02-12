@@ -23,13 +23,15 @@ public class Vis_Teori extends Activity {
 	protected ListView _listView;
 	protected ActionBarDrawerToggle _actionDrawerToggle;
 	protected String[] _testArray;
+	protected CharSequence _title;
+	protected CharSequence _activity_title;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.vis_teori);
-
+		_activity_title = getTitle();
 		_drawerLayout = (DrawerLayout) findViewById(R.id.dlVis_Teori);
 		_listView = (ListView) findViewById(R.id.lvVis_Teori);
 		_testArray = getResources().getStringArray(R.array.test_array);
@@ -39,17 +41,17 @@ public class Vis_Teori extends Activity {
 		_listView.setOnItemClickListener(new DrawerItemClickListener());
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		getActionBar().setHomeButtonEnabled(true);
-//helo
+		// helo
 		_actionDrawerToggle = new ActionBarDrawerToggle(this, _drawerLayout,
 				R.drawable.ic_drawer, R.string.drawer_open,
 				R.string.drawer_close) {
 			public void onDrawerClosed(View v) {
-				getActionBar().setTitle("closing");
+				getActionBar().setTitle(_title);
 				invalidateOptionsMenu();
 			}
 
 			public void onDrawerOpened(View v) {
-				getActionBar().setTitle("opening");
+				getActionBar().setTitle(_activity_title);
 				invalidateOptionsMenu();
 			}
 		};
@@ -66,6 +68,11 @@ public class Vis_Teori extends Activity {
 		return super.onCreateOptionsMenu(menu);
 	}
 
+	public void setTitle(CharSequence title) {
+		_title = title;
+		getActionBar().setTitle(_title);
+	}
+
 	/* Called whenever we call invalidateOptionsMenu() */
 	@Override
 	public boolean onPrepareOptionsMenu(Menu menu) {
@@ -73,7 +80,6 @@ public class Vis_Teori extends Activity {
 		// view
 		boolean drawerOpen = _drawerLayout.isDrawerOpen(_listView);
 		menu.findItem(R.id.action_settings).setVisible(!drawerOpen);
-		// menu.findItem(R.id.action_websearch).setVisible(!drawerOpen);
 		return super.onPrepareOptionsMenu(menu);
 	}
 
@@ -125,23 +131,24 @@ public class Vis_Teori extends Activity {
 
 	protected void selectItem(int position) {
 		Fragment newFragment = new Fragment_1();
-		CharSequence title = "This is page 1";
+		_title = "This is page 1";
 		FragmentManager fm = getFragmentManager();
 		switch (position) {
 		case 0:
 			newFragment = new Fragment_1();
-			title = "This is page 1";
+			_title = "This is page 1";
 			break;
 		case 1:
 			newFragment = new Fragment_2();
-			title = "This is page 2";
+			_title = "This is page 2";
 			break;
 		}
 		fm.beginTransaction().replace(R.id.flViskos, newFragment).commit();
 		_listView.setItemChecked(position, true);
-		// if to change the title depending on the selected item do it here
-		getActionBar().setTitle(title);
+
 		_drawerLayout.closeDrawer(_listView);
+		// if to change the title depending on the selected item do it here
+		setTitle(_title);
 	}
 
 	@Override

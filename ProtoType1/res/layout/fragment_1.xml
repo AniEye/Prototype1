@@ -30,6 +30,7 @@
         android:id="@+id/textView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
         android:gravity="center_horizontal"
         android:text="This is page 1"
         android:textAppearance="?android:attr/textAppearanceMedium" />
