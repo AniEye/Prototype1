@@ -11,6 +11,9 @@
     <string name="title_activity_calculator">Kalkulator</string>
     <string name="ovingPromt">Velg Øving</string>
     <string name="title_tests">Øvinger</string>
+    
+    <string name="drawer_open">hi opening</string>
+    <string name="drawer_close">Godbye clsing</string>
 
     <string-array name="ovinger">
         <item>Velg Øving</item>
