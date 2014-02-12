@@ -2,11 +2,7 @@ package com.bbv.prototype1.Kalkulatorer;
 
 import com.bbv.prototype1.Basic_Calc;
 import com.bbv.prototype1.R;
-import com.bbv.prototype1.R.id;
-import com.bbv.prototype1.R.layout;
-
 import android.content.Context;
-import android.util.Log;
 import android.view.*;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,6 +25,7 @@ public class Til_Viskos extends Basic_Calc {
 		Initialize();
 	}
 
+	@Override
 	protected void Initialize() {
 		_linLay = setAndGetLinearLayout(R.layout.activity_viskositet__tilsynelatende);
 		textFields[0] = FindAndReturnEditText(R.id.etTheta, focChan);
@@ -38,6 +35,7 @@ public class Til_Viskos extends Basic_Calc {
 		_update = FindAndReturnButton(R.id.bViskosUpdate, cliLis);
 	}
 
+	@Override
 	protected void CreateListeners() {
 
 		cliLis = new OnClickListener() {
@@ -126,6 +124,7 @@ public class Til_Viskos extends Basic_Calc {
 		}
 	}
 
+	@Override
 	protected void updateRelevantResult() {
 		for (int i = 0; i < _textFieldsStatus.length; i++) {
 			if (_textFieldsStatus[i] == 0) {
@@ -138,6 +137,7 @@ public class Til_Viskos extends Basic_Calc {
 		}
 	}
 
+	@Override
 	public String calculation(int variableToCalculate, float... fieldStatuses) {
 		/**
 		 * This method calculates the expression according to which 
@@ -151,7 +151,7 @@ public class Til_Viskos extends Basic_Calc {
 		float theAnswer = 0;
 		switch (variableToCalculate) {
 		case THETA_INDEX:// theta
-			theAnswer = (float) ((fieldStatuses[2] * fieldStatuses[1]) / 300);
+			theAnswer = (fieldStatuses[2] * fieldStatuses[1]) / 300;
 			break;
 		case RPM_INDEX:// rpm
 			theAnswer = (float) ((300.0 * fieldStatuses[0]) / fieldStatuses[2]);
